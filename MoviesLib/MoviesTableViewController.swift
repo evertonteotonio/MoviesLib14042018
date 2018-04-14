@@ -8,11 +8,13 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
 class MoviesTableViewController: UITableViewController {
     
     var label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 22))
     var fetchedResultController: NSFetchedResultsController<Movie>!
+    var backgroudMusicPlayer: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +23,7 @@ class MoviesTableViewController: UITableViewController {
         label.text = "Sem filmes"
         label.textAlignment = .center
         label.textColor = .white
-        
+        prepareMusic()
         loadMovies()
     }
     
@@ -29,6 +31,26 @@ class MoviesTableViewController: UITableViewController {
         if let vc = segue.destination as? MovieViewController {
             vc.movie = fetchedResultController.object(at: tableView.indexPathForSelectedRow!)
         }
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        backgroudMusicPlayer.play()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        backgroudMusicPlayer.stop()
+    }
+    
+    func prepareMusic() {
+        let url = Bundle.main.url(forResource: "music", withExtension: "mp3")!
+        backgroudMusicPlayer = try! AVAudioPlayer(contentsOf: url)
+        backgroudMusicPlayer.volume = 0.2
+        backgroudMusicPlayer.numberOfLoops = -1
+        
+        
     }
     
     func loadMovies() {

@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import CoreMotion
 
 class SettingsViewController: UIViewController {
-
+    
     @IBOutlet weak var scColors: UISegmentedControl!
     @IBOutlet weak var swAutoplay: UISwitch!
     @IBOutlet weak var tfGenre: UITextField!
     @IBOutlet weak var ivBG: UIImageView!
+    
+    
+    lazy var motionManager = CMMotionManager()
     
     //PickerView que será usado como entrada para o textField de Gênero
     var pickerView: UIPickerView!
@@ -29,23 +33,46 @@ class SettingsViewController: UIViewController {
         pickerView.delegate = self  //Definindo seu delegate
         pickerView.dataSource = self  //Definindo seu dataSource
         
-        //Criando uma toobar que servirá de apoio ao pickerView. Através dela, o usuário poderá
-        //confirmar sua seleção ou cancelar
+        //        //Criando uma toobar que servirá de apoio ao pickerView. Através dela, o usuário poderá
+        //        //confirmar sua seleção ou cancelar
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 44))
-        
-        //O botão abaixo servirá para o usuário cancelar a escolha de gênero, chamando o método cancel
+        //
+        //        //O botão abaixo servirá para o usuário cancelar a escolha de gênero, chamando o método cancel
         let btCancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
         let btSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        
-        //O botão done confirmará a escolha do usuário, chamando o método done.
+        //
+        //        //O botão done confirmará a escolha do usuário, chamando o método done.
         let btDone = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
         toolbar.items = [btCancel, btSpace, btDone]
+        //
+        
+        
+        //Definindo a toolbar como view de apoio do textField (view que fica acima do teclado)
+        
+        tfGenre.inputAccessoryView = toolbar
         
         //Aqui definimos que o pickerView será usado como entrada do extField
         tfGenre.inputView = pickerView
         
-        //Definindo a toolbar como view de apoio do textField (view que fica acima do teclado)
-        tfGenre.inputAccessoryView = toolbar
+        
+        
+        if motionManager.isDeviceMotionAvailable {
+            
+            motionManager.startDeviceMotionUpdates(to: OperationQueue.main, withHandler: { (data, error) in
+                
+                if error == nil {
+                    guard let data = data else {return}
+                    let angle = atan2(data.gravity.x, data.gravity.y) - .pi
+                    self.ivBG.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
+                }
+                
+            })
+            
+        }
+        
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,7 +102,7 @@ class SettingsViewController: UIViewController {
         UserDefaults.standard.set(tfGenre.text!, forKey: "genre")
         cancel()
     }
-
+    
     @IBAction func changeColor(_ sender: UISegmentedControl) {
         //Este método será chamado sempre que o SegmentedControl for alterado. Usaremos o método
         //set(_ value: Int, forKey defaultName: String) para armazenar no UserDefaults o índice

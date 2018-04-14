@@ -19,16 +19,12 @@
 			<false/>
 			<key>KeyboardType</key>
 			<string>Alphabet</string>
-			<key>AutocapitalizationType</key>
-			<string>None</string>
-			<key>AutocorrectionType</key>
-			<string>No</string>
 		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>Tocar filmes automaticamente:</string>
+			<string>Tocar filmes automaticamente</string>
 			<key>Key</key>
 			<string>autoplay</string>
 			<key>DefaultValue</key>
@@ -38,11 +34,11 @@
 			<key>Type</key>
 			<string>PSMultiValueSpecifier</string>
 			<key>Title</key>
-			<string>Esquema de Cores</string>
+			<string>Esquema de cores</string>
 			<key>Key</key>
 			<string>color</string>
 			<key>DefaultValue</key>
-			<integer>0</integer>
+			<string>0</string>
 			<key>Titles</key>
 			<array>
 				<string>Clean</string>
@@ -52,8 +48,8 @@
 			<key>Values</key>
 			<array>
 				<integer>0</integer>
-				<integer>1</integer>
-				<integer>2</integer>
+				<string>1</string>
+				<string>2</string>
 			</array>
 		</dict>
 	</array>

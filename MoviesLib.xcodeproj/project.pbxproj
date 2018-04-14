@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		071943921F0CFDC3002D0692 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071943911F0CFDC3002D0692 /* SettingsViewController.swift */; };
-		071943951F0D64B7002D0692 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 071943941F0D64B7002D0692 /* Settings.bundle */; };
 		07780D4D1E6D860E00BC3630 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07780D4C1E6D860E00BC3630 /* AppDelegate.swift */; };
 		07780D4F1E6D860E00BC3630 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07780D4E1E6D860E00BC3630 /* MovieViewController.swift */; };
 		07780D521E6D860E00BC3630 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07780D501E6D860E00BC3630 /* Main.storyboard */; };
@@ -18,6 +17,9 @@
 		AC264C1B1E7CA30200F083F1 /* MoviesLib.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC264C191E7CA30200F083F1 /* MoviesLib.xcdatamodeld */; };
 		AC264C1D1E7CABAE00F083F1 /* UIViewController+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC264C1C1E7CABAD00F083F1 /* UIViewController+CoreData.swift */; };
 		AC264C1F1E7CBEB300F083F1 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC264C1E1E7CBEB300F083F1 /* CategoriesViewController.swift */; };
+		AC2B68112082309E00E36443 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AC2B68102082309E00E36443 /* Settings.bundle */; };
+		AC2B6818208242F700E36443 /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AC2B68162082351400E36443 /* music.mp3 */; };
+		AC2B68192082431900E36443 /* spiderman-trailer.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AC2B68172082351A00E36443 /* spiderman-trailer.mp4 */; };
 		AC64CE811E70BCAA00FD5EFF /* MoviesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC64CE801E70BCAA00FD5EFF /* MoviesTableViewController.swift */; };
 		AC64CE831E70C8C600FD5EFF /* movies.json in Resources */ = {isa = PBXBuildFile; fileRef = AC64CE821E70C8C600FD5EFF /* movies.json */; };
 		AC64CED51E70C98E00FD5EFF /* arrival-small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AC64CEBB1E70C98E00FD5EFF /* arrival-small.jpg */; };
@@ -56,7 +58,6 @@
 
 /* Begin PBXFileReference section */
 		071943911F0CFDC3002D0692 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		071943941F0D64B7002D0692 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		07780D491E6D860E00BC3630 /* MoviesLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07780D4C1E6D860E00BC3630 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07780D4E1E6D860E00BC3630 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +69,9 @@
 		AC264C1A1E7CA30200F083F1 /* MoviesLib.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoviesLib.xcdatamodel; sourceTree = "<group>"; };
 		AC264C1C1E7CABAD00F083F1 /* UIViewController+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+CoreData.swift"; sourceTree = "<group>"; };
 		AC264C1E1E7CBEB300F083F1 /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		AC2B68102082309E00E36443 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		AC2B68162082351400E36443 /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
+		AC2B68172082351A00E36443 /* spiderman-trailer.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "spiderman-trailer.mp4"; sourceTree = "<group>"; };
 		AC64CE801E70BCAA00FD5EFF /* MoviesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesTableViewController.swift; sourceTree = "<group>"; };
 		AC64CE821E70C8C600FD5EFF /* movies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movies.json; sourceTree = "<group>"; };
 		AC64CEBB1E70C98E00FD5EFF /* arrival-small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "arrival-small.jpg"; sourceTree = "<group>"; };
@@ -165,8 +169,10 @@
 				AC70C4F21E7422FE005E598A /* Movie */,
 				071943931F0D5902002D0692 /* Settings */,
 				AC70C4F31E742306005E598A /* Theater */,
+				AC2B68162082351400E36443 /* music.mp3 */,
+				AC2B68172082351A00E36443 /* spiderman-trailer.mp4 */,
 				07780D4C1E6D860E00BC3630 /* AppDelegate.swift */,
-				071943941F0D64B7002D0692 /* Settings.bundle */,
+				AC2B68102082309E00E36443 /* Settings.bundle */,
 				AC264C191E7CA30200F083F1 /* MoviesLib.xcdatamodeld */,
 				07780D501E6D860E00BC3630 /* Main.storyboard */,
 				07780D531E6D860E00BC3630 /* Assets.xcassets */,
@@ -314,7 +320,7 @@
 				AC64CEE81E70C98E00FD5EFF /* madmax-wide.jpg in Resources */,
 				AC64CEE71E70C98E00FD5EFF /* madmax-small.jpg in Resources */,
 				AC64CEE51E70C98E00FD5EFF /* logan-small.jpg in Resources */,
-				071943951F0D64B7002D0692 /* Settings.bundle in Resources */,
+				AC2B68112082309E00E36443 /* Settings.bundle in Resources */,
 				AC64CEDE1E70C98E00FD5EFF /* deadpool-wide.jpg in Resources */,
 				07780D541E6D860E00BC3630 /* Assets.xcassets in Resources */,
 				AC64CEE41E70C98E00FD5EFF /* legobatman-wide.jpg in Resources */,
@@ -335,9 +341,11 @@
 				AC64CEE11E70C98E00FD5EFF /* kongskull-small.jpg in Resources */,
 				07780D521E6D860E00BC3630 /* Main.storyboard in Resources */,
 				AC64CED61E70C98E00FD5EFF /* arrival-wide.jpg in Resources */,
+				AC2B68192082431900E36443 /* spiderman-trailer.mp4 in Resources */,
 				AC64CEE61E70C98E00FD5EFF /* logan-wide.jpg in Resources */,
 				AC64CEEA1E70C98E00FD5EFF /* rogueone-wide.jpg in Resources */,
 				AC64CED51E70C98E00FD5EFF /* arrival-small.jpg in Resources */,
+				AC2B6818208242F700E36443 /* music.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
